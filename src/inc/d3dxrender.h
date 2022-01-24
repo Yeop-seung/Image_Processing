@@ -16,7 +16,7 @@ extern "C" {
 
 D3DXRENDER_API void* D3DXRenderCreate(HWND hWnd, int nVideoWidth, int nVideoHeight, BOOL bIsLock);
 D3DXRENDER_API void D3DXRenderClose(void* pHandle, BOOL bIsLock);
-D3DXRENDER_API bool D3DXRenderDraw(void* pHandle, HWND hWnd, BOOL bIsLock);
+D3DXRENDER_API bool D3DXRenderDraw(void* pHandle, HWND hWnd, void* pData, int nSize, int nWidth, int nHeight, BOOL bIsLock);
 
 
 #ifdef __cplusplus

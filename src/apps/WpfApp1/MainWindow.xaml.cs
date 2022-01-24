@@ -37,16 +37,18 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            Stop();
             wnd.Clear();
             SingleDivision single = new SingleDivision();
             gridtest.Children.Clear();
             gridtest.Children.Add(single);
-
+             
             wnd.Add(new UserWnd());
             single.test1.Children.Add(wnd[0].host);
         }
         private void SingleDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             SingleDivision single = new SingleDivision();
             gridtest.Children.Clear();
@@ -57,6 +59,7 @@ namespace WpfApp1
         }
         private void Two_Horiziontality_Division_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             TwoHoriziontalityDivision TwoHoriziontality = new TwoHoriziontalityDivision();
             gridtest.Children.Clear();
@@ -71,6 +74,7 @@ namespace WpfApp1
         }
         private void Two_Perpendicular_Division_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             TwoPerpendicularDivision TwoPerpendicular = new TwoPerpendicularDivision();
             gridtest.Children.Clear();
@@ -85,6 +89,7 @@ namespace WpfApp1
         }
         private void Three_Perpendicular_Division_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             ThreePerpendicularDivision ThreePerpendicular = new ThreePerpendicularDivision();
             gridtest.Children.Clear();
@@ -100,6 +105,7 @@ namespace WpfApp1
         }
         private void FourDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             FourDIvision four = new FourDIvision();
             gridtest.Children.Clear();
@@ -115,6 +121,7 @@ namespace WpfApp1
         }
         private void SixDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             SixDivision six = new SixDivision();
             gridtest.Children.Clear();
@@ -133,6 +140,7 @@ namespace WpfApp1
         }
         private void EightDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             EightDivision eight = new EightDivision();
             gridtest.Children.Clear();
@@ -153,6 +161,7 @@ namespace WpfApp1
         }
         private void NineDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             NineDivision nine = new NineDivision();
             gridtest.Children.Clear();
@@ -174,6 +183,7 @@ namespace WpfApp1
         }
         private void ThirteenDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             ThirteenDivision thirteen = new ThirteenDivision();
             gridtest.Children.Clear();
@@ -199,6 +209,7 @@ namespace WpfApp1
         }
         private void SixteenDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             SixteenDivision sixteen = new SixteenDivision();
             gridtest.Children.Clear();
@@ -227,6 +238,7 @@ namespace WpfApp1
         }
         private void TwentyfiveDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             TwentyfiveDivision twentyfive = new TwentyfiveDivision();
             gridtest.Children.Clear();
@@ -264,6 +276,7 @@ namespace WpfApp1
         }
         private void ThirtysixDivision_Click(object sender, RoutedEventArgs e)
         {
+            Stop();
             wnd.Clear();
             ThirtysixDivision thirtysix = new ThirtysixDivision();
             gridtest.Children.Clear();
@@ -318,7 +331,14 @@ namespace WpfApp1
                 wnd[i].get_Test();
             }
         }
-
+        private void Stop()
+        {
+            if (wnd.Count > 0)
+            {
+                for (int i = 0; i < wnd.Count; i++)
+                    wnd[i].Test_Stop();
+            }
+        }
         private void RTSP_Start_Click(object sender, RoutedEventArgs e)
         {
 

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9FCA40D1-85E2-4415-8C51-F8718FDBB0CC}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>WpfApp1</RootNamespace>
     <AssemblyName>WpfApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -24,6 +24,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +36,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FFmpeg.AutoGen, Version=4.4.1.1, Culture=neutral, PublicKeyToken=9b7632533a381715, processorArchitecture=MSIL">
+      <HintPath>packages\FFmpeg.AutoGen.4.4.1.1\lib\net472\FFmpeg.AutoGen.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\test\2021-000-0000_OZPLAYER\src\libs\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -58,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CQueueBuffer.cs" />
     <Compile Include="Division\EightDivision.xaml.cs">
       <DependentUpon>EightDivision.xaml</DependentUpon>
     </Compile>
@@ -94,6 +107,8 @@
     <Compile Include="Division\TwoPerpendicularDivision.xaml.cs">
       <DependentUpon>TwoPerpendicularDivision.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="RTSPClient.cs" />
     <Compile Include="UserWnd.xaml.cs">
       <DependentUpon>UserWnd.xaml</DependentUpon>
     </Compile>
@@ -180,6 +195,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,6 +204,31 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DLL\FFmpeg.AutoGen.dll" />
+    <Content Include="FFmpeg.AutoGen.dll" />
+    <Content Include="FFMpegDLL\avcodec-58.dll" />
+    <Content Include="FFMpegDLL\avdevice-58.dll" />
+    <Content Include="FFMpegDLL\avfilter-7.dll" />
+    <Content Include="FFMpegDLL\avformat-58.dll" />
+    <Content Include="FFMpegDLL\avutil-56.dll" />
+    <Content Include="FFMpegDLL\postproc-55.dll" />
+    <Content Include="FFMpegDLL\swresample-3.dll" />
+    <Content Include="FFMpegDLL\swscale-5.dll" />
+    <Resource Include="DLL\FFmpeg.AutoGen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\SharpRTSP-master\RtspClientExample\RtspClientExample.csproj">
+      <Project>{5708b80a-8a16-4145-b0ca-3a317237dac5}</Project>
+      <Name>RtspClientExample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libs\SharpRTSP-master\RTSP\RTSP.csproj">
+      <Project>{0ad96152-eb0c-4f31-b4f4-583ce88a5046}</Project>
+      <Name>RTSP</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

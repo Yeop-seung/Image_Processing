@@ -143,7 +143,7 @@ namespace RtspClientExample
                 case PlatformID.Win32NT      :
                 case PlatformID.Win32S       :
                 case PlatformID.Win32Windows :
-
+                    Console.WriteLine("SetDllPath : {0}", dllDirectoryPath);
                     SetDllDirectory(dllDirectoryPath);
 
                     break;

@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  colorspace.c
+  D3DRenderer9.cpp
+  d3dxrender.cpp
+C:\Users\곽승엽\Desktop\Image_Processing\2021-000-0000_OZPLAYER\src\libs\d3dxrender\d3dxrender.cpp(18,12): warning C4477: 'printf' : 서식 문자열 '%X'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'CD3DRenderer9 *'입니다.
+C:\Users\곽승엽\Desktop\Image_Processing\2021-000-0000_OZPLAYER\src\libs\d3dxrender\d3dxrender.cpp(18,12): warning C4313: 'printf': 서식 문자열의 '%X'이(가) 인수 1('CD3DRenderer9 *' 형식)과(와) 충돌합니다.
+  dllmain.cpp
+  코드를 생성하고 있습니다...
+     ..\..\bin\Debug\d3dxrender.lib 라이브러리 및 ..\..\bin\Debug\d3dxrender.exp 개체를 생성하고 있습니다.
+  d3dxrender.vcxproj -> C:\Users\곽승엽\Desktop\Image_Processing\2021-000-0000_OZPLAYER\src\bin\Debug\d3dxrender.dll

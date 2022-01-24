@@ -1055,12 +1055,13 @@ HRESULT	CD3DRenderer9::DrawVideo(HWND hWnd, LPVOID pFrame, int nSize, int nVideo
 {
 	LPVOID pMotion = NULL;
 	D3DCOLOR dwColor = D3D_RGB_YELLOW;
+	
 	if (!IsValid())
 	{
 		WriteD3DError(_T("[Warning] %s : Failed to get a D3D. error=0x%x\n"), __WFUNCTION__, E_POINTER);
 		return E_POINTER;
 	}
-
+	
 	if (!::IsWindow(hWnd))
 	{
 		WriteD3DError(_T("[Warning] %s : Invalid window. error=0x%x\n"), __WFUNCTION__, E_POINTER);
